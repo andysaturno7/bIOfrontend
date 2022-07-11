@@ -1,0 +1,36 @@
+<form class="row gx-3 gy-2 align-items-center">
+    <div class="col-sm-6">
+      <label class="visually-hidden" for="specificSizeInputDescription">Descripción</label>
+      <input type="text" [(ngModel)]="product.description" name="description" class="form-control" id="specificSizeInputDescription" placeholder="Laminas 2x1">
+    </div>
+    <div class="col-sm-3">
+      <label class="visually-hidden" for="specificSizeInputGroupQTy">Cantidad</label>
+      <div class="input-group">
+        <div class="input-group-text">qty</div>
+        <input type="number" [(ngModel)]="product.qty" name="qty" class="form-control" id="specificSizeInputGroupQTy" placeholder="Cantidad">
+      </div>
+    </div>
+    <div class="col-sm-3">
+        <label class="visually-hidden" for="specificSizeInputGroupOut">Salida</label>
+        <div class="input-group">
+          <div class="input-group-text">out</div>
+          <input type="number" [(ngModel)]="product.out" name="out" class="form-control" id="specificSizeInputGroupOut" placeholder="Salida">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <label class="visually-hidden" for="specificSizeInputBarcode">Barcode</label>
+        <input type="text" [(ngModel)]="product.barcode" name="barcode" class="form-control" id="specificSizeInputBarcode" placeholder="00000">
+      </div>
+    <div class="col-sm-3">
+      <label class="visually-hidden" for="specificSizeSelect">Categoría</label>
+      <select class="form-select" [(ngModel)]="product.categories" name="categories" id="specificSizeSelect">
+        <option selected>Choose...</option>
+        <option value="Mobiliario">Mobiliario</option>
+        <option value="Stands">Stands</option>
+        <option value="AudioVisual">AudioVisual</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-primary" (click)="isEdit?emitEdit():emitAdd()">{{isEdit?"Editar":"Agregar"}}</button>
+    </div>
+  </form>

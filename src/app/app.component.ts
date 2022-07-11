@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bIOadmin';
+
+  handleScanned(code: string){
+    console.log({code});
+  }
 }

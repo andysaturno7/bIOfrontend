@@ -1,0 +1,5 @@
+<ul [class]="ulclasses">
+    <li *ngFor="let product of products | groupByProperty:'id'">
+        {{product.description}}
+    </li>
+</ul>

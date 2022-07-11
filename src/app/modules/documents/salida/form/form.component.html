@@ -1,0 +1,21 @@
+<form class="row g-3" [formGroup]="formController">
+    <div class="col-md-6">
+        <label for="inputEventName" class="form-label">Nombre del Evento</label>
+        <input type="text" class="form-control" formControlName="eventName" id="inputEventName">
+    </div>
+    <div class="col-md-6">
+        <label for="inputDocumentDate" class="form-label">Fecha</label>
+        <input type="datetime-local" class="form-control" formControlName="date" id="inputDocumentDate">
+    </div>
+    <div class="col-md-6">
+        <label for="inputCoordinator" class="form-label">Coordinador</label>
+        <input type="text" class="form-control" formControlName="coordinator" id="inputCoordinator">
+    </div>
+    <div class="col-md-6">
+        <label for="inputResponsible" class="form-label">Coordinador de Bodega</label>
+        <input type="text" class="form-control" formControlName="responsible" id="inputResponsible">
+    </div>
+    <div class="col-md-6">
+        <button type="button" class="btn btn-dark"><i class="fa fa-print"></i><span> Imprimir</span></button>
+    </div>
+</form>

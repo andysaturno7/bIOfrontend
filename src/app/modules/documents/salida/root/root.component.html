@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row g-2">
+        <div class="col">
+            <app-form></app-form>
+        </div>
+        <div class="col">
+            <input-scan (scanned)="handleScanner($event)" [cssclasses]="'form-control'"></input-scan>
+            <app-list [elements]="products"></app-list>
+        </div>
+    </div>
+</div>
