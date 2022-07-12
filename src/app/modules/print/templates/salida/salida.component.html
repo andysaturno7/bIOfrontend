@@ -1,0 +1,58 @@
+<ng-container *ngIf="data">
+  <div #template class="paper">
+    <div class="container">
+      <div class="header">
+        <div><img src="/assets/img/logo.png" alt="TEX" width="60" /></div>
+        <h3 class="text-center">Hoja de Salida</h3>
+        <div>
+          <div class="row">
+            <div class="col-md-6">
+              Evento: <span class="data">{{ data.eventName }}</span>
+            </div>
+            <div class="col-md-6">
+              Fecha:
+              <span class="data">
+                {{ data.date }}
+              </span>
+            </div>
+            <div class="col-md-6">
+              Coordinador: <span class="data">{{ data.coordinator }}</span>
+            </div>
+            <div class="col-md-6">
+              Responsable de Bodega:
+              <span class="data">
+                {{ data.responsible }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Cantidad</th>
+              <th>Descripción</th>
+              <th>Observación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of data.products | groupByProperty: 'id'">
+              <td>{{ product.count }}</td>
+              <td>{{ product.description }}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br /><br /><br /><br />
+      <div class="text-center firmas-box">
+        <div>Responsable Entrega</div>
+        <div>Coordinador Recibe</div>
+        <div>Coordinador Entrega</div>
+        <div>Responsable Recibe</div>
+      </div>
+    </div>
+  </div>
+</ng-container>

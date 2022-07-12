@@ -1,26 +1,24 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'groupByProperty'
+  name: 'groupByProperty',
 })
 export class GroupByPropertyPipe implements PipeTransform {
-
   transform(value: any[], key: string): any[] {
-    value = [
-        {id: 3},
-        {id: 4},
-        {id: 1},
-        {id: 3}
-    ]
-    let t1:any = {};
-    value.forEach((val,idx)=>{
-      t1[val[key]] = !t1[val[key]] ? val : val;
-      t1[val[key]].count = t1.count + 1 | 0;
-    });
-    
-    let res = Object.keys(t1).map(v=>t1[v]);
-    console.log({t1, res, value});
-    return []
-  }
+    let keyValues = value.reduce((previous, current, index) => {
+      let keyValue = current[key];
+      previous[keyValue] = previous[keyValue] ?? [];
+      previous[keyValue].push(current);
+      return previous;
+    }, {});
 
+    let res: any[] = [];
+
+    Object.keys(keyValues).map((val) => {
+      res.push({ ...keyValues[val][0], count: keyValues[val].length });
+    });
+    console.log({ value, res });
+
+    return res;
+  }
 }

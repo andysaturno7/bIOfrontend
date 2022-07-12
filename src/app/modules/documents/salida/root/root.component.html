@@ -1,11 +1,22 @@
 <div class="container">
-    <div class="row g-2">
-        <div class="col">
-            <app-form></app-form>
-        </div>
-        <div class="col">
-            <input-scan (scanned)="handleScanner($event)" [cssclasses]="'form-control'"></input-scan>
-            <app-list [elements]="products"></app-list>
-        </div>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <app-form (createDocument)="handleCreateDocument($event)"></app-form>
     </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-5 card">
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6 card">
+          <div class="card-body">
+            <input-scan
+              (scanned)="handleScanner($event)"
+              [cssclasses]="'form-control'"
+            ></input-scan>
+          </div>
+        </div>
+      </div>
+      <app-list [elements]="products"></app-list>
+    </div>
+  </div>
 </div>

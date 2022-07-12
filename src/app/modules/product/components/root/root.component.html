@@ -1,15 +1,19 @@
 <div class="container container-fluid">
-    <i class="fa fa-plus" role="button" routerLink="/products"></i>
-    <div class="row g-3">
-        <div class="col-sm">
-            <prd-form (add)="addProduct($event)" (edit)="editProduct($event)"></prd-form>
-        </div>
-        <div class="col-sm">
-            <div class="card">
-                <div class="card-body">
-                    <prd-table [products]="products"></prd-table>
-                </div>
-            </div>
-        </div>
+  <i class="fa fa-plus" role="button" routerLink="/products"></i>
+  <div class="row g-3">
+    <div class="col-sm">
+      <prd-form
+        #form
+        (add)="addProduct($event)"
+        (edit)="editProduct($event)"
+      ></prd-form>
     </div>
+    <div class="col-sm" *ngIf="!form.isEdit">
+      <div class="card">
+        <div class="card-body">
+          <prd-table [products]="products"></prd-table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

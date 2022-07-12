@@ -1,31 +1,65 @@
-<div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        <span class="fs-4">TEX</span>
-      </a>
-      
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a routerLink="/products" routerLinkActive="active" class="nav-link">Productos</a></li>
-        <li class="nav-item"><a routerLink="" routerActive="active" class="nav-link">FAQs</a></li>
-        <li class="nav-item" dropdown>
-            <div class="btn-group" >
-                <button id="button-basic" dropdownToggle type="button" class="btn text-primary dropdown-toggle"
-                        aria-controls="dropdown-basic">
-                  Acciones <span class="caret"></span>
-                </button>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                    role="menu" aria-labelledby="button-basic">
-                  <li role="menuitem"><a class="dropdown-item">Crear hoja de salida</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">?????????</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">?????????</a></li>
-                  <li class="divider dropdown-divider"></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">?????????</a>
-                  </li>
-                </ul>
-              </div>
-        </li>
+<div class="container noprint customHeaderPrintAdjust">
+  <header
+    class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+  >
+    <a
+      href="/"
+      class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+    >
+      <svg class="bi me-2" width="40" height="32">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+      <span class="fs-4"
+        ><img src="/assets/img/logo.png" alt="TEX" width="50"
+      /></span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a routerLink="/products" routerLinkActive="active" class="nav-link"
+          >Productos</a
+        >
+      </li>
+      <li class="nav-item">
+        <a routerLink="" routerActive="active" class="nav-link">FAQs</a>
+      </li>
+      <li class="nav-item" dropdown>
+        <div class="btn-group">
+          <button
+            id="button-basic"
+            dropdownToggle
+            type="button"
+            class="btn text-primary dropdown-toggle"
+            aria-controls="dropdown-basic"
+          >
+            Acciones <span class="caret"></span>
+          </button>
+          <ul
+            id="dropdown-basic"
+            *dropdownMenu
+            class="dropdown-menu"
+            role="menu"
+            aria-labelledby="button-basic"
+          >
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="/documents/salida"
+                >Crear hoja de salida</a
+              >
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" href="#">?????????</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" href="#">?????????</a>
+            </li>
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem">
+              <a class="dropdown-item" href="#">?????????</a>
+            </li>
+          </ul>
+        </div>
+      </li>
     </ul>
-</header>
+  </header>
 </div>
 <router-outlet></router-outlet>

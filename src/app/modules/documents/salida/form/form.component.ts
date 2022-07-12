@@ -1,23 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-
   formController = this._fb.group({
     date: ['', Validators.required],
     eventName: ['', Validators.required],
     coordinator: ['', Validators.required],
-    responsible: ['', Validators.required]
+    responsible: ['', Validators.required],
   });
 
-  constructor(private _fb: FormBuilder) { }
+  @Output('createDocument') createEvent: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit(): void {
+  constructor(private _fb: FormBuilder) {}
+
+  ngOnInit(): void {}
+
+  crearDocumentoDeSalida() {
+    this.createEvent.emit(this.formController.value);
   }
-
 }

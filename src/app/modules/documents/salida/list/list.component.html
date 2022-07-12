@@ -1,5 +1,8 @@
-<ul [class]="ulclasses">
-    <li *ngFor="let product of products | groupByProperty:'id'">
-        {{product.description}}
-    </li>
+<ul style="list-style: none; margin: 0; padding: 0%" [class]="ulclasses">
+  <li
+    *ngFor="let product of products | groupByProperty: 'id'"
+    [class]="liclasses"
+  >
+    {{ product.count }} - {{ product.description }}
+  </li>
 </ul>

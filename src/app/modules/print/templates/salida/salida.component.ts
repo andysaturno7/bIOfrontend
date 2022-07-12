@@ -1,18 +1,12 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { PrintService } from '../../print.service';
 
 @Component({
-  selector: 'tmp-dipo',
-  templateUrl: './dipo.component.html',
-  styleUrls: ['./dipo.component.css'],
+  selector: 'tmp-salida',
+  templateUrl: './salida.component.html',
+  styleUrls: ['./salida.component.css'],
 })
-export class DipoComponent implements OnInit, AfterViewInit {
+export class SalidaComponent implements OnInit {
   data;
   styleId = '';
   @ViewChild('template') template?: ElementRef;

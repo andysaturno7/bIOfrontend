@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TotemComponent } from './totem.component';
+import { SalidaComponent } from './salida.component';
 
-describe('TotemComponent', () => {
-  let component: TotemComponent;
-  let fixture: ComponentFixture<TotemComponent>;
+describe('SalidaComponent', () => {
+  let component: SalidaComponent;
+  let fixture: ComponentFixture<SalidaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TotemComponent ]
+      declarations: [ SalidaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TotemComponent);
+    fixture = TestBed.createComponent(SalidaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

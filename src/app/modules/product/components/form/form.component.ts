@@ -7,40 +7,42 @@ import { ProductService } from '../../product.service';
 @Component({
   selector: 'prd-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-
   @Output('add') add: EventEmitter<Product> = new EventEmitter();
   @Output('edit') edit: EventEmitter<Product> = new EventEmitter();
 
   product: Product = {
-    description: "",
+    description: '',
     qty: 0,
     out: 0,
     barcode: '',
-    categories: ''
+    categories: '',
   };
-  isEdit: boolean = false;
+  public isEdit: boolean = false;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private _prd: ProductService) { }
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private _prd: ProductService
+  ) {}
 
   ngOnInit(): void {
-    const params = this.route.snapshot.params;    
-    if(params.id){
-      this.isEdit = true;           
-      this._prd.getById(params.id).subscribe(res=>{
+    const params = this.route.snapshot.params;
+    if (params.id) {
+      this.isEdit = true;
+      this._prd.getById(params.id).subscribe((res) => {
         this.product = res;
-      }, console.log)
-      }
+      }, console.log);
+    }
   }
 
-  emitEdit(){   
+  emitEdit() {
     this.edit.emit(this.product);
   }
-  
-  emitAdd(){
+
+  emitAdd() {
     this.add.emit(this.product);
   }
-
 }
